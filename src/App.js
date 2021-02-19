@@ -9,9 +9,23 @@ class App extends Component {
      {name:"akku",age:20},
      {name:"abhi",age:10},
    ]}
+
+
+   nameSwitchHandler = ()=>{
+     this.setState({
+       persons:[
+         {name:"chan2",age:30},
+         {name:"akku",age:20},
+         {name:"abhi",age:120},
+        ]
+     })
+   }
   render () {return (
     <div className="App">
       <h1>Hello react</h1>
+      <button onClick={this.nameSwitchHandler}>
+        Switch
+      </button>
       <Person className="Per" name={this.state.persons[0].name} age={this.state.persons[0].age} />
       <Person className="Per" name={this.state.persons[1].name} age={this.state.persons[1].age}> This is my hobby</Person>
       <Person className="Per" name={this.state.persons[2].name} age={this.state.persons[2].age}/>
