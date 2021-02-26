@@ -1,10 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person'
-import Men from './men/men'
 import {React,Component} from "react"
 import "./Person/Person.css"
-import Buton from "./buttons/button"
+import Nav from "./components/navbar/nav"
 
 class App extends Component {
    state={
@@ -44,13 +43,24 @@ class App extends Component {
         visibility: !visible
       })
    }
+
+   toggleButn=()=>{
+       this.setState({
+          persons:[
+         {name:"aka",age:30},
+         {name: "ravui", age:20},
+         {name:"raj",age:120},
+        ]
+       })
+   }
    
   render () {
 
-   const style={
+   var style={
       backgroundColor:"green",
       fontSize:"20px",
-      padding:"10px"
+      padding:"10px",
+      color:"white"
     } 
 
      var person=null
@@ -68,13 +78,7 @@ class App extends Component {
 
     return (
     <div className="App">
-      <h1>Hello react</h1>
-      <button style={style} onClick={this.toggleVisibility}>
-        Switch
-      </button>
-      {person}
-      <Buton />
-     
+      <Nav />
     </div> 
   );
 }
