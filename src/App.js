@@ -4,6 +4,7 @@ import Person from './Person/Person'
 import {React,Component} from "react"
 import "./Person/Person.css"
 import Nav from "./components/navbar/nav"
+import HeaderImg from "./components/headerImg/headerImg"
 
 class App extends Component {
    state={
@@ -84,6 +85,7 @@ class App extends Component {
       </button>
       {person} */}
       <Nav />
+      <HeaderImg />
     </div> 
   );
 }
