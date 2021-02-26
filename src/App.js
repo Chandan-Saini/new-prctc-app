@@ -78,6 +78,11 @@ class App extends Component {
 
     return (
     <div className="App">
+      {/* <h1>Hello react</h1>
+      <button style={style} onClick={this.toggleVisibility}>
+        Switch
+      </button>
+      {person} */}
       <Nav />
     </div> 
   );
