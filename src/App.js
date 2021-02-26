@@ -4,6 +4,7 @@ import Person from './Person/Person'
 import Men from './men/men'
 import {React,Component} from "react"
 import "./Person/Person.css"
+import Buton from "./buttons/button"
 
 class App extends Component {
    state={
@@ -52,18 +53,28 @@ class App extends Component {
       padding:"10px"
     } 
 
+     var person=null
+
+     if (this.state.visibility) {
+        person=(
+         <div>
+         <Person className="Per" click={this.nameSwitchHandler.bind(this,"kundan")} name={this.state.persons[0].name} age={this.state.persons[0].age} />
+      <Person className="Per" changed={this.nameChangedHandler} name={this.state.persons[1].name} age={this.state.persons[1].age}> This is my hobby</Person>
+      <Person className="Per" name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+     </div>
+       )
+     }
+
+
     return (
     <div className="App">
       <h1>Hello react</h1>
       <button style={style} onClick={this.toggleVisibility}>
         Switch
       </button>
+      {person}
+      <Buton />
      
-     {this.state.visibility ? <div>
-         <Person className="Per" click={this.nameSwitchHandler.bind(this,"kundan")} name={this.state.persons[0].name} age={this.state.persons[0].age} />
-      <Person className="Per" changed={this.nameChangedHandler} name={this.state.persons[1].name} age={this.state.persons[1].age}> This is my hobby</Person>
-      <Person className="Per" name={this.state.persons[2].name} age={this.state.persons[2].age}/>
-     </div> : null}
     </div> 
   );
 }
