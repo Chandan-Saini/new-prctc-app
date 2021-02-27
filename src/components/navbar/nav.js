@@ -1,4 +1,7 @@
 import img from  "../../images/logo-horizontal-1.png"
+
+import Dropdown from "./dropdown"
+
 const styleNav={
   height: "60px",
   padding: "0 165px",
@@ -21,11 +24,14 @@ const styleNav={
 const Nav=()=>{
     
     return(
-        <nav style={styleNav}>
+       <div>
+            <nav style={styleNav}>
           <img src={img} style={styleImg} />
           <p style={para}> sometext</p>
           <p style={para}> sometext</p>
-        </nav>
+           <Dropdown />
+          </nav>
+       </div>
     )
 }
 
